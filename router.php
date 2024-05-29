@@ -1,7 +1,7 @@
 <?php
 # this file will be responsible for handling the current router
-$uri = parse_url($_SERVER["REQUEST_URI"])['path'];
-$routes = require("routes.php");
+$uri    = parse_url($_SERVER["REQUEST_URI"])['path'];
+$routes = require "routes.php";
 // function routeToController($uri, array $routes) {
 //     if (!loggedIn()) {
 //         if (array_key_exists($uri, $routes['authentication'])) {
@@ -33,7 +33,7 @@ $routes = require("routes.php");
 function routeToController($uri, array $routes) {
     if (array_key_exists($uri, $routes)) {
         if (file_exists($routes[$uri]))
-            require($routes[$uri]);            
+            require $routes[$uri];            
         else
             abort(404);
     }
@@ -52,7 +52,7 @@ function routeToController($uri, array $routes) {
 function abort($code) {
     http_response_code($code);
     // normally we would have to check if the {$code}.html file exists
-    require(__DIR__ . "/Views/Partials/{$code}.php");
+    require __DIR__ . "/Views/Partials/{$code}.php";
     die(); // kills the page
 }
 

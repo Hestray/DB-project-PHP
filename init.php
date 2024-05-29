@@ -1,5 +1,5 @@
 <?php
     // connect to database
-    $config = require("config.php");
+    $config = require "config.php";
     require("Database.php");
     $db = new Database($config['database']);

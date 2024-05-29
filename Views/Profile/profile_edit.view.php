@@ -4,7 +4,7 @@
         <title>Edit your profile</title>
     </head>
     <body>
-        <?php require(__DIR__ . "/../../Views/Partials/nav.php"); ?>
+        <?php require __DIR__ . "/../../views/partials/nav.php"; ?>
         Something about editing my profile
     </body>
 </body>

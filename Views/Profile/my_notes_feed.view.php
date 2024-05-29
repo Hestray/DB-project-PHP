@@ -1,4 +1,4 @@
-<?php require(__DIR__ . "/../../init.php"); ?>
+<?php require __DIR__ . "/../../init.php"; ?>
 <?php 
     $_SESSION['UID'] = 2;
     $id = $_GET['id'];    // this should be read from whatever the user tries to give in the url
@@ -13,7 +13,7 @@
         <title>My Notes</title>
     </head>
     <body>
-        <?php require(__DIR__ . "/../../Views/Partials/nav.php"); ?>
+        <?php require __DIR__ . "/../partials/nav.php"; ?>
         Something about my notes
         <ul>
             <?php 

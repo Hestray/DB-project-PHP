@@ -9,11 +9,11 @@
                 <h1><?= "{$heading}" ?></h1>
             </div>
             <div class="authentication container">
-                <form id="login_form" action=<?= __DIR__ . "/../Controllers/Process/login.process.php" ?> method="POST">
+                <form id="login_form" action="/login" method="POST">
                     <?php
-                        require(__DIR__ . "/../Partials/body/login.php");
+                        require __DIR__ . "/../partials/body/login.php";
                     ?>
                 </form>
             </div>
         </div>
-        <?php require(__DIR__ . "/../Partials/footer.html"); ?>
+        <?php require __DIR__ . "/../partials/footer.html"; ?>

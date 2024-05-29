@@ -4,7 +4,7 @@
         <title>Notes</title>
     </head>
     <body>
-        <?php require(__DIR__ . "/../Partials/nav.php"); ?>        
+        <?php require __DIR__ . "/../partials/nav.php"; ?>
         Something about general notes
     </body>
 </html>

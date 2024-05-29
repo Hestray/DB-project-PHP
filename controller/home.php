@@ -5,6 +5,6 @@
         <link rel="stylesheet" href="CSS/nav.css">
     </head>
     <body>
-        <?php require(__DIR__ . "/../Views/Partials/nav.php"); ?>
+        <?php require __DIR__ . "/../views/partials/nav.php"; ?>
     </body>
 </html>
