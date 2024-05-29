@@ -28,7 +28,7 @@
         </ul>
 
         <div>
-            <a href="#">Create a note</a>
+            <a href="/notes/create">Create a note</a>
         </div>
     </body>
 </body>
