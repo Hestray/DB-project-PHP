@@ -9,9 +9,9 @@
                 <h1><?= $heading ?></h1>
             </div>
             <div class="authentication container">
-                <form id="sign_up_form" action="" method="post">
+                <form id="sign_up_form" action=<?= __DIR__ . "/../Controllers/Process/sign_up.process.php" ?> method="post">
                     <?php
-                        require(__DIR__ . "/../Partials/body/sign_up.html");
+                        require(__DIR__ . "/../Partials/body/sign_up.php");
                     ?>
                     </form>
                 </div>

@@ -1,10 +1,4 @@
 <?php require(__DIR__ . "/../../init.php"); ?>
-<?php 
-    $id = $_GET['id'];    // this should be read from whatever the user tries to give in the url
-    if ($id != $_SESSION['UID']) {
-        abort(403);
-    }
-?>
 
 <!DOCTYPE html>
 <body>
@@ -16,7 +10,7 @@
         Something about my notes
         <ul>
             <?php 
-                $task_result = $db->query("Select * from notes where note_UID = ?", [$id])['result'];
+                $task_result = $db->query("Select * from notes where note_UID = ?", [1])['result'];
                 if ($task_result->num_rows >= 1) :
                     $tasks = $task_result->fetch_all(MYSQLI_ASSOC);
                     foreach ($tasks as $task) : ?>

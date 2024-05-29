@@ -1,3 +1,10 @@
+<?php
+    if (!loggedIn()) {
+        // means it is empty, so no user is logged in
+        require(__DIR__ . "/../Authentication/Controllers/login.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
