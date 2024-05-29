@@ -1,8 +1,8 @@
 <?php
 
 class Database {
-    public $connection;
-    public $statement;
+    protected $connection;
+    protected $statement;
 
     public function __construct($config, $username='root', $password='') {
         // extract parameters
@@ -11,12 +11,15 @@ class Database {
         $dbname = $config['dbname'];
 
         // create connection
-        $this->connection = mysqli_connect($host, $username, $password, $dbname, $port) or die("Something went wrong.");
+        $this->connection = new mysqli($host, $username, $password, $dbname, $port) or die("Something went wrong.");
     }
 
     public function query($q, $params = []) {
         // prepare
         $this->statement = mysqli_prepare($this->connection, $q);
+        if (!$this->statement) {
+            throw new Exception("Something went wrong.");
+        }
         // bind parameters dynamically
         if (isset($params)) {
             $types = '';
@@ -35,15 +38,29 @@ class Database {
 
         // execute
         $this->statement->execute();
+        if (!$this->statement) {
+            throw new Exception("Faulty execution.");
+        }
         $result = [
-            'result' => $this->statement->get_result(),
+            'result'        => $this->statement->get_result(),
             'affected_rows' => $this->statement->affected_rows
         ];
         return $result;
     }
 
-    public function get() {
-        $result = $this->statement->get_result();
-        return $result->fetch_all();
+    public function select($q, $params = []) {
+        $result = $this->query($q, $params)['result'];
+        if ($result->num_rows >= 1) {
+            $results = $result->fetch_all(MYSQLI_ASSOC);
+            return $results;
+        }
+    }
+
+    /**
+    * TBD
+    */
+    public function modify($q, $params = []) {
+        $result = $this->query($q, $params)['affected_rows'];
+        return $result;
     }
 }

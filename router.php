@@ -8,7 +8,7 @@ $routes = require("routes.php");
 //             if (file_exists($routes['authentication'][$uri]))
 //                 require($routes['authentication'][$uri]);            
 //             else
-//                 abort(404);
+//                 abort(NOT_FOUND);
 //         }
 //     } 
 //     else {

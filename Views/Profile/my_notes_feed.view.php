@@ -1,5 +1,6 @@
 <?php require(__DIR__ . "/../../init.php"); ?>
 <?php 
+    $_SESSION['UID'] = 2;
     $id = $_GET['id'];    // this should be read from whatever the user tries to give in the url
     if ($id != $_SESSION['UID']) {
         abort(403);
@@ -16,16 +17,18 @@
         Something about my notes
         <ul>
             <?php 
-                $task_result = $db->query("Select * from notes where note_UID = ?", [$id])['result'];
-                if ($task_result->num_rows >= 1) :
-                    $tasks = $task_result->fetch_all(MYSQLI_ASSOC);
+                $tasks = $db->select("Select * from notes where note_UID = ?", [$id]);
                     foreach ($tasks as $task) : ?>
                     <li>
                         <a href="/notes?NID=<?= $task['NID'] ?>">
                             <?= "{$task['body']}" ?>
                         </a>
                     </li>
-            <?php endforeach; endif; ?>
+            <?php endforeach; //endif; ?>
         </ul>
+
+        <div>
+            <a href="#">Create a note</a>
+        </div>
     </body>
 </body>

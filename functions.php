@@ -25,7 +25,7 @@ function showErrors($active) {
 
 /**
  * Requests the url of the current website.
- * @return true if the $value is the same as the current website's URI
+ * @return bool true if the $value is the same as the current website's URI
  */
 function urlIs($value) {
     return $_SERVER['REQUEST_URI'] === $value;
@@ -33,7 +33,7 @@ function urlIs($value) {
 
 /**
  * Verifies if there is an active session.
- * @return true if the session is not empty, false if it is empty.
+ * @return bool true if the session is not empty, false if it is empty.
  */
 function loggedIn() {
     return !empty($_SESSION['username']);
@@ -46,3 +46,10 @@ function logout() {
     if (!empty($_SESSION['username']))
         unset($_SESSION['username']);
 }
+
+function authorize($URI_value, $SESSION_value, $status = 403) {
+    if ($URI_value != $SESSION_value) {
+        abort($status);
+    }
+}
+$id = $_GET['id'];    // this should be read from whatever the user tries to give in the url
