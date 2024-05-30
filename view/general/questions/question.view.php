@@ -1,8 +1,7 @@
-<?php require __DIR__ . "/../../init.php"; ?>
+<?php require base_path("init.php"); ?>
 <?php 
-    $_SESSION['UID'] = 2;
     $id = $_GET['id'];    // this should be read from whatever the user tries to give in the url
-    if ($id != $_SESSION['UID']) {
+    if ($id != $_SESSION['id']) {
         abort(403);
     }
 ?>
@@ -10,25 +9,25 @@
 <!DOCTYPE html>
 <body>
     <head>
-        <title>My Notes</title>
+        <title><?= $heading ?></title>
     </head>
     <body>
-        <?php require __DIR__ . "/../../views/partials/nav.php"; ?>
-        Something about my notes
+        <?php view("partials/nav.php"); ?>
+        Something about my questions
         <ul>
             <?php 
                 $tasks = $db->select("Select * from notes where note_UID = ?", [$id]);
                     foreach ($tasks as $task) : ?>
                     <li>
                         <a href="/notes?NID=<?= $task['NID'] ?>">
-                            <?= htmlspecialchars($task['body']) ?>
+                            <?= "{$task['body']}" ?>
                         </a>
                     </li>
             <?php endforeach; //endif; ?>
         </ul>
 
         <div>
-            <a href="/notes/create">Create a note</a>
+            <a href="/questions/create">Create a question</a>
         </div>
     </body>
 </body>

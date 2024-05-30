@@ -1,19 +1,19 @@
-<!DOCTYPE>
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <title><?= $heading ?></title>
     </head>
-    <body>
+    <html>
         <div class="container">
             <div class="title container">
                 <h1><?= $heading ?></h1>
             </div>
             <div class="authentication container">
-                <form id="sign_up_form" action="/signup" method="post">
+                <form id="forgot_password_form" action="/recovery" method="POST">
                     <?php
-                        require __DIR__ . "/../partials/body/sign_up.php";
+                        require __DIR__ . "/../partials/body/forgot_password.php";
                     ?>
-                    </form>
-                </div>
+                </form>
             </div>
+        </div>
         <?php require __DIR__ . "/../partials/footer.html"; ?>

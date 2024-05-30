@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Questions</title>
+        <title><?= $heading ?></title>
     </head>
     <body>
-        <?php require __DIR__ . "/../partials/nav.php"; ?>
+        <?php view("partials/nav.php"); ?>
         Something about general questions
     </body>
 </html>

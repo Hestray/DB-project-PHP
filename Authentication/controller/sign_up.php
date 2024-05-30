@@ -1,3 +1,5 @@
 <?php
-    $heading = "Sign up";
-    require __DIR__ . "/../views/sign_up.view.php";
+view("/sign_up.view.php",
+    [
+        $heading => "Sign up"
+    ]);

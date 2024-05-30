@@ -1,3 +1,5 @@
 <?php
-$heading = "My Questions";
-require __DIR__ . "/../../views/profile/my_questions_feed.view.php";
+view("/profile/my_questions_feed.view.php",
+        [
+            'heading' => "My Questions"  
+        ]);

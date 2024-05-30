@@ -1,4 +1,9 @@
 <?php
-$heading = "Note";
+require base_path("init.php");
+$NID = $_GET['NID'];
 
-require __DIR__ . "/../../views/general/notes/note.view.php";
+view("/general/notes/note.view.php",
+        [
+            'heading' => "Note",
+            'note' => $db->select("Select * from notes where NID = ?", [$NID])
+        ]);

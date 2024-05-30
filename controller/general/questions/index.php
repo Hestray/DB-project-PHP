@@ -1,3 +1,5 @@
 <?php
-$heading = "Questions";
-require __DIR__ . "/../../views/general/questions/index.view.php";
+view("/general/questions/index.view.php",
+        [
+            'heading' => "Questions"
+        ]);

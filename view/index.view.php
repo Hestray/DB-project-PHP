@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="CSS/nav.css">
     </head>
     <body>
-        <?php require __DIR__ . "/../views/partials/nav.php"; ?>
+        <?php view("/partials/nav.php"); ?>
+        <h1>Welcome, <?= $_SESSION['username'] ?>!</h1>
     </body>
 </html>

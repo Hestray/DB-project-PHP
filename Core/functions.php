@@ -31,6 +31,15 @@ function urlIs($value) {
     return $_SERVER['REQUEST_URI'] === $value;
 }
 
+function base_path($path) {
+    return BASE_PATH . $path;
+}
+
+function view($path, $attributes = []) {
+    extract($attributes);
+    require base_path('view/' . $path); 
+}
+
 /**
  * Verifies if there is an active session.
  * @return bool true if the session is not empty, false if it is empty.

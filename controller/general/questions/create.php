@@ -1,5 +1,5 @@
 <?php
-// create-question file
-$heading = "Create question";
-
-require __DIR__ . "/../../views/general/questions/create.view.php";
+view("/general/questions/create.view.php",
+        [
+            'heading' => "Create question"
+        ]);

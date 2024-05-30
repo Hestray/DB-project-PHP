@@ -1,26 +1,33 @@
 <?php
-require __DIR__ . "/../../Validator.php";
-
-// create-note file
-$heading = "Create note";
+use Core\Validator;
+$errors = [];
 
 // handle the form submission
-require(__DIR__ . "/../../init.php");
-
+require base_path("init.php");
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $errors = [];
-    
-    if (!Validator::bodyCheck($_POST['body'], 0, 3000))
-        $errors['body'] = "The body length must be between 0 and 3000 characters.";
+    if (Validator::bodyCheck($_POST['title'], 0, 255) == 1)
+        $errors['title'] = "Title length exceeds maximum of 255 characters.";
+    elseif (Validator::bodyCheck($_POST['title'], 0, 255) == -1)
+        $errors['title'] = "Title cannot be empty!";
 
+    if (Validator::bodyCheck($_POST['body'], 0, 30000) == 1)
+        $errors['body'] = "Title length exceeds maximum of 30000 characters.";
+    elseif (Validator::bodyCheck($_POST['body'], 0, 30000) == -1)
+        $errors['body'] = "Title cannot be empty!";
+    
     if (empty($errors)) {
-        $db->query('INSERT INTO notes (body, note_UID) 
-                VALUES(?, ?)', 
+        $db->query('INSERT INTO notes (body, title, note_UID) 
+                VALUES(?, ?, ?)', 
                 [
                     $body = $_POST['body'],
-                    $user_UID = $_SESSION['UID']
+                    $title = $_POST['title'],
+                    $user_UID = $_SESSION['id']
                 ]);
     }
 }
 
-require(__DIR__ . "/../../views/general/notes/create.view.php");
+view("/general/notes/create.view.php",
+[
+    'heading' => "Create note",
+    'errors' => $errors
+]);

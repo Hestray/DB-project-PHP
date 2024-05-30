@@ -1,3 +1,5 @@
 <?php
-$heading = "My Library";
-require __DIR__ . "/../../views/general/my_library.view.php";
+view("/general/my_library.view.php",
+    [
+        'heading' => "My Library"
+    ]);

@@ -1,5 +1,9 @@
 <?php
 
+namespace Core;
+use mysqli;
+use Exception;
+
 class Database {
     protected $connection;
     protected $statement;
@@ -37,8 +41,9 @@ class Database {
         }
 
         // execute
-        $this->statement->execute();
-        if (!$this->statement) {
+        try {
+            $this->statement->execute();}
+        catch (Exception) {
             throw new Exception("Faulty execution.");
         }
         $result = [
@@ -48,12 +53,16 @@ class Database {
         return $result;
     }
 
+    /**
+     * TBD
+     */
     public function select($q, $params = []) {
         $result = $this->query($q, $params)['result'];
         if ($result->num_rows >= 1) {
             $results = $result->fetch_all(MYSQLI_ASSOC);
             return $results;
         }
+        return false;
     }
 
     /**
