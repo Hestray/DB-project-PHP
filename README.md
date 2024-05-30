@@ -16,8 +16,8 @@ These are snippets of what gets displayed on the website that are static.
 ## CSS
 Anything that has to deal with the UI (and some UX) when it comes to the website.
 # PLANS FOR FUTURE UPDATES
--[ ] introduce code blocks and the ability to copy it;
--[ ] display equations using LaTex (although probably MathJax via JS);
--[ ] download an accessible file;
--[ ] allow markdown syntax to be converted to HTML and displayed as such (note: easily done via react, idk about php);
--[ ] set a notification system;
+- introduce code blocks and the ability to copy it;
+- display equations using LaTex (although probably MathJax via JS);
+- download an accessible file;
+- allow markdown syntax to be converted to HTML and displayed as such (note: easily done via react, idk about php);
+- set a notification system;
