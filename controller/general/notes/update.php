@@ -1,4 +1,5 @@
 <?php
+// this file deals with the update query
 use Core\Validator;
 use Core\App;
 use Core\Database;
