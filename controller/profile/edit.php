@@ -4,7 +4,7 @@ use Core\Database;
 
 $db = App::resolve(Database::class);
 
-view("/general/questions/index.view.php",
+view("/profile/profile_edit.view.php",
     [
-        'heading' => "Questions"
+        'heading' => "Edit your profile"
     ]);

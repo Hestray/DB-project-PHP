@@ -1,16 +1,29 @@
 <?php
     const BASE_PATH = __DIR__ . "/../";
     require BASE_PATH . "Core/functions.php";
+
+    // autoload
     spl_autoload_register(function ($class) {
         $class = str_replace("\\", "/", $class);
-        require base_path("{$class}.php");
+        require base_path($class . ".php");
     });
-    showErrors(TRUE);       // turn errors on for everything
+    
+    // errors display in browser: ON if set to TRUE
+    showErrors(TRUE);
 
+    // load service containers
+    require BASE_PATH . "services.php";
+    
+    // sessions
     session_start();  
     // delete soon
     $_SESSION['username'] = "PEPEPOPO";
     $_SESSION['id'] = 2;
     // here ends delete
 
-    require base_path("Core/router.php");
+    // routing
+    $router = new \Core\Router();
+    $uri    = parse_url($_SERVER["REQUEST_URI"])['path'];
+    $routes = require base_path("routes.php");
+    $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
+    $router->route($uri, $method);

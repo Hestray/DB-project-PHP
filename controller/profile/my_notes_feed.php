@@ -1,10 +1,12 @@
 <?php
-require base_path("init.php");
+use Core\App;
+use Core\Database;
+
+$db = App::resolve(Database::class);
 
 view("/profile/my_notes_feed.view.php",
-        [
-            'heading' => 'My Notes',
-            'tasks' => $db->select("Select * from notes where note_UID = ?", [$_SESSION['id']]),
-            // 'id' => $_GET['id'] // this should be read from whatever the user tries to give in the url
-            'id' => $_SESSION['id']
-        ]);
+    [
+        'heading' => 'My Notes',
+        'notes' => $db->select("Select * from notes where note_UID = ?", [$_SESSION['id']]),
+        'id' => $_SESSION['id']
+    ]);

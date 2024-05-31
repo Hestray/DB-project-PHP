@@ -4,6 +4,6 @@
         <title><?= $heading ?></title>
     </head>
     <body>
-        <h1>Create a question</h1>
+        <h1><?= $heading ?></h1>
     </body>
 </html>
