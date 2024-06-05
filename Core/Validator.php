@@ -16,4 +16,14 @@ class Validator {
         elseif (strlen($value) <= $min) return -1;
         return 0;
     }
+
+    /**
+     * Checks if the given value is a valid email format
+     * @param string $value string to check
+     * @return mixed Returns the filtered data, or `false` if the filter fails.
+     */
+    public static function email(string $value)
+    {
+        return filter_var($value, FILTER_VALIDATE_EMAIL);
+    }
 }

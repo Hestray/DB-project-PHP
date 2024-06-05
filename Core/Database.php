@@ -70,7 +70,7 @@ class Database {
      * This method is used for DML with SELECT
      * @param string $q is the select query to be executed
      * @param $params are the parameters that need to be transmitted in case of WHERE conditions
-     * @return array & bool an integer if the query was executed successfully, false otherwise
+     * @return mixed an integer if the query was executed successfully, false otherwise
      */
     public function select($q, $params = []) {
         $result = $this->query($q, $params)['result'];
@@ -85,7 +85,7 @@ class Database {
      * This method is used for DMLs with UPDATE, INSERT or DELETE
      * @param string $q is the query to execute
      * @param $params are the parameters that need to be transmitted in case of WHERE conditions
-     * @return array & bool an integer if the query was executed successfully, false otherwise
+     * @return mixed an integer if the query was executed successfully, false otherwise
      */
     public function modify($q, $params = []) {
         $result = $this->query($q, $params);

@@ -1,5 +1,5 @@
 <?php
-view("forgot_password.view.php",
+view("../authentication/view/forgot_password.view.php",
      [
-          $heading => "Password recovery" 
+          'heading' => "Password recovery" 
      ]);

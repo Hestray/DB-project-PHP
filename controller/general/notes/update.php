@@ -11,7 +11,7 @@ $errors = [];
 $note = $db->select("Select * from notes where NID = ?", [$_POST['NID']]);
 
 // authorize
-authorize($_SESSION['id'] === $note[0]['note_UID']);
+authorize($_SESSION['user']['id'] === $note[0]['note_UID']);
 
 // validate
 if (Validator::bodyCheck($_POST['title'], 0, 255) == 1)

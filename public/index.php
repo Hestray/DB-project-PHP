@@ -16,10 +16,6 @@
     
     // sessions
     session_start();  
-    // delete soon
-    $_SESSION['username'] = "PEPEPOPO";
-    $_SESSION['id'] = 2;
-    // here ends delete
 
     // routing
     $router = new \Core\Router();

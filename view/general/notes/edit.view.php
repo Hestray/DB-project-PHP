@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <title><?= $heading ?></title>
-        <link rel="stylesheet" href="/CSS/validation_errors.css">
+        <link rel="stylesheet" href="/assets/validation_errors.css">
     </head>
     <body>
         <?php view("/partials/nav.php"); ?>
@@ -39,7 +39,7 @@
             </div>
         </form>
         <!-- delete button -->
-        <form class="delete-content" method="POST">
+        <form class="delete-content" method="POST" action="/note">
                 <input type="hidden" name="_method" value="DELETE">
                 <input type="hidden" name="NID" value="<?= $note[0]['NID'] ?>">
                 <button class="delete-button" style="cursor: pointer; color: white; border: none; background-color: red; text-weight: bold;">Delete note</button>

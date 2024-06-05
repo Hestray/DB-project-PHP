@@ -67,17 +67,9 @@ function view($path, $attributes = []) {
 }
 
 /**
- * Verifies if there is an active session.
- * @return bool true if the session is not empty, false if it is empty.
- */
-function loggedIn() {
-    return !empty($_SESSION['username']);
-}
-
-/**
  * Checks that the session is not empty and if so, empties it, effectively logging the user out
  */
 function logout() {
-    if (!empty($_SESSION['username']))
-        unset($_SESSION['username']);
+    if (!empty($_SESSION['user']['username']))
+        unset($_SESSION['user']['username']);
 }

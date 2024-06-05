@@ -25,7 +25,7 @@
             <?php
                 $paragraphs = explode("\n", $note[0]['body']);
                 foreach ($paragraphs as $paragraph) 
-                    echo '<p class="content-paragraph">' . htmlspecialchars($paragraph) . '</p>';
+                    echo '<p class="content-paragraph">' . $paragraph . '</p>';
             ?>
         </div>
         <!-- download-able pdf -->

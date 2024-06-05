@@ -34,7 +34,7 @@ if (empty($errors)) {
         [
             $body = $_POST['body'],
             $title = $_POST['title'],
-            $note_UID = $_SESSION['id']
+            $note_UID = $_SESSION['user']['id']
         ]);
     $NID = $db->lastInsertID();
 

@@ -8,7 +8,7 @@ $db = App::resolve(Database::class);
 $note = $db->select("Select * from notes where NID = ?", [$_GET['NID']]);
 if ($note === false) abort(Response::NOT_FOUND);
 
-authorize($_SESSION['id'] === $note[0]['note_UID']);
+authorize($_SESSION['user']['id'] === $note[0]['note_UID']);
 
 view("/general/notes/edit.view.php",
 [

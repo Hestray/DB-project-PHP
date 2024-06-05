@@ -1,5 +1,5 @@
 <?php
-view("/sign_up.view.php",
+view("../authentication/view/sign_up.view.php",
     [
-        $heading => "Sign up"
+        'heading' => "Sign up"
     ]);

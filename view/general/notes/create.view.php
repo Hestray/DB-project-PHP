@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <title><?= $heading ?></title>
-        <link rel="stylesheet" href="/CSS/validation_errors.css">
+        <link rel="stylesheet" href="/assets/validation_errors.css">
     </head>
     <body>
         <?php view("/partials/nav.php"); ?>
