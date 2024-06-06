@@ -65,11 +65,3 @@ function view($path, $attributes = []) {
     extract($attributes);
     require base_path('view/' . $path); 
 }
-
-/**
- * Checks that the session is not empty and if so, empties it, effectively logging the user out
- */
-function logout() {
-    if (!empty($_SESSION['user']['username']))
-        unset($_SESSION['user']['username']);
-}

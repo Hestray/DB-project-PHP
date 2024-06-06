@@ -4,7 +4,9 @@ use Core\Database;
 
 $db = App::resolve(Database::class);
 
+// redirect
 view("/general/questions/index.view.php",
     [
-        'heading' => "Questions"
+        'heading' => "Questions",
+        'questions' => $db->select("Select * from questions")
     ]);

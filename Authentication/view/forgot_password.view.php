@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <title><?= $heading ?></title>
+        <link rel="stylesheet" href="/assets/auth.css">
     </head>
     <html>
         <div class="container">
@@ -28,7 +29,7 @@
                     <input type="text" id="user-username" name="username" required>
                 </div>
 
-                <input type="submit" value="Recover your password" onclick="">
+                <input type="submit" value="Recover your password" onclick="alert("This would send an email");">
                 <!-- TODO: add a script for onclick, so that it only displays an alert saying that yeah, it would send an email -->
                 </form>
             </div>

@@ -14,6 +14,6 @@ view("/general/notes/edit.view.php",
 [
     'heading' => "Edit note",
     'note' => $note,
-    'nid' => $_GET['NID'],
+    'NID' => $_GET['NID'],
     'errors' => []
 ]);

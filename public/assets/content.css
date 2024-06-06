@@ -1,0 +1,251 @@
+body {
+    background-color: #F7F8F7;
+    color: #383A36;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 17px;
+    width: 1200px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+main {
+    min-height: 650px;
+}
+
+h1, .content-title {
+    margin: 30px 50px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 500px;
+}
+  
+.card {
+    flex: 0 1 30%;
+    height: inherit;
+    margin: 1em 4em;
+    border-radius: 45px;
+    padding: 2.5%;
+}
+
+.card h3 {
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-top: -2px;
+}
+
+#card-1 {
+    background-color: #DFE581;
+    color: #393B1B;
+}
+
+#card-1 hr {
+    border: #B1B84C solid 1px;
+    margin-bottom: 25px;
+    margin-top: 30px;
+}
+
+#card-2 {
+    background-color: #FBB39A;
+    color: #42332E;
+}
+
+#card-2 hr {
+    border: #EA292F solid 1px;
+    margin-bottom: 25px;
+    margin-top: 30px;
+}
+
+.top-container {
+    border-bottom: 1px solid #ccc;
+    margin: 0 auto;    
+    width: 80%;
+    max-width: 800px;
+}
+
+.mid-container {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 500px;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-title {
+    text-align: center;
+    padding: 5px 0;
+}
+
+.content {
+    padding: 20px 0;
+}
+
+.button {
+    flex: 0 1 30%;
+    height: inherit;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.button a {
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #66A892;
+    border-radius: 20px;
+    color: white;
+    padding: 15px;
+}
+
+.content-author {
+    text-align: right;
+    vertical-align: middle;
+    flex: 0 1 30%;
+    margin-bottom: 20px;
+}
+
+.content-author h4 {
+    margin: 0;
+}
+
+.description, .list {
+    margin: 10px 50px;
+    margin-bottom: 14px;
+}
+
+.list a {
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.list li {
+    margin-left: -22px; 
+    margin-bottom: 4px;
+}
+
+.create {
+    width: 235px;
+    margin: auto;
+    margin-top: 15vh; 
+    font-weight: bold;
+    background-color: #BA8ECD;
+    border-radius: 100px;
+    text-align: center;
+}
+
+.create a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 25px 0; 
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 22px;
+}
+
+.create:hover {
+    background-color: #F14145;
+}
+
+form {
+    width: 800px;
+    margin: 30px 50px;
+}
+
+#nav-form {
+    width: 160px;
+    margin: 0;
+}
+
+label, form div {
+    margin: 10px 0; 
+}
+
+label {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+form button {
+    float: right;
+    margin-right: -15px;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    background-color: #BA8ECD;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.cancel {
+    display: block;
+}
+
+.cancel a {
+    background-color: #89BCAB;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 15px;;
+}
+
+input, textarea {
+    margin-bottom: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 15px;
+    padding: 7px;
+    border-radius: 8px;
+}
+
+textarea {
+    width: 100%;
+}
+
+#title {
+    height: 100px;
+}
+
+#body {
+    height: 250px;
+}
+
+#nav-form input, #nav-form button {
+    float: none;
+    margin: none;
+    padding: none;
+    font-size: 16px;
+}
+
+footer {
+    border-top: #49655F solid 1px;
+    margin-bottom: -5px;;
+}
+
+footer a {
+    margin: 5px;
+}
+
+footer a, .info {
+    margin-top: 25px;
+}
+
+.links {
+    margin-top: 10px;
+}
+
+footer a:first-of-type, .info {
+    padding-left: 15px;
+}
+
+footer a:last-of-type, .info {
+    padding-right: 15px;
+}
+
+.info {
+    border-top: #49655F solid 1px;
+}

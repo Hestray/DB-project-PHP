@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <title><?= $heading ?></title>
+        <link rel="stylesheet" href="/assets/auth.css">
         <link rel="stylesheet" href="/assets/validation_errors.css">
     </head>
     <html>
@@ -49,10 +50,13 @@
                                 <p class="validation_error"><?= $errors['password']; ?></p>
                         <?php endif; ?>
                     </div>
-
-                    <input type="submit" value="Login">
-                    <a href="/recovery">Forgot your password</a>
-                    <a href="/signup">Create an account</a>
+                    <div class="submit">
+                        <input type="submit" value="Login">
+                    </div>
+                    <div class="auth-links">
+                        <!-- <a href="/recovery">Forgot your password</a> -->
+                        <a href="/signup">Create an account</a>
+                    </div>
                 </form>
             </div>
         </div>

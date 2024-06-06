@@ -1,10 +1,7 @@
 <?php
-use Core\App;
-use Core\Database;
-
-$db = App::resolve(Database::class);
-
+// responsible for displaying the form
 view("/general/questions/create.view.php",
-    [
-        'heading' => "Create question"
-    ]);
+[
+    'heading' => "Ask question",
+    'errors' => []
+]);

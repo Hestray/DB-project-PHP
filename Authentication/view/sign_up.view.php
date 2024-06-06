@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <title><?= $heading ?></title>
+        <link rel="stylesheet" href="/assets/auth.css">
         <link rel="stylesheet" href="/assets/validation_errors.css">
     </head>
     <body>
@@ -45,9 +46,13 @@
                                 <p class="validation_error"><?= $errors['password']; ?></p>
                         <?php endif; ?>
                     </div>
-                    <input type="submit" value="signup">
-                    <a href="/login">Log into your account</a>
-                    </form>
-                </div>
+                    <div class="submit">
+                        <input type="submit" value="signup">
+                    </div>
+                    <div class="auth-links">
+                        <a href="/login">Log into your account</a>
+                    </div>
+                </form>
             </div>
-        <?php require base_path("authentication/partials/footer.html"); ?>
+        </div>
+    <?php require base_path("authentication/partials/footer.html"); ?>
